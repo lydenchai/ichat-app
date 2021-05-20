@@ -13,10 +13,10 @@ function login(e) {
     let color = "red";
 
     //check to change color to green and text= "Login success!" if login success.
-    if (isValid === true){
-      text = "Successful Login";
-      color = "green";
-    }
+    // if (isValid === true){
+    //   text = "Successful Login";
+    //   color = "green";
+    // }
     message.textContent = text;
     message.style.color = color;
   });
