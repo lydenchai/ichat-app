@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IChat-Project</title>
-        <link rel="stylesheet" href="css/main.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    </head>
-    <body>
-        <!-- <div class="container">
-            <h2>MESSAGER</h2>
-            <form>
-              <input type="text" name="userName" id="userName" placeholder="UserName"/>
-              <input type="text" name="password" id="password" placeholder="Password"/>
-              <button id="btn">Login</button>
-            </form>
-            <hr />
-            <p id="message"></p>
-        </div> -->
 
-        <div class="login-box">
-            <h2>MEMBER LOGIN</h2>
-            <form>
-                <input type="text" name="username" id="username" placeholder="Username">
-                <input type="text" name="password" id="password" placeholder="Password">
-                <button id="btn">Log In</button>
-            </form>
-            <br>
-            <a href="#">Forgot Password?</a>
-            <p id="message"></p>
+<head>
+    <link rel="shortcut icon" href="style/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!-- login page -->
+    <div class="login">
+        <div class="intro">
+            <img src="style/login_logo.png" alt="">
         </div>
-        
-        <script src="js/script.js"></script>
-    </body>
+        <div class="form">
+            <form action="">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <button id="btn">Log In</button>
+                <h3 style="color:black;">Forgot account?</h3>
+                <hr><br>
+                <button id="btn2">Creat New Account</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="messaging">
+        <!-- Header -->
+        <div class="header">
+            <div class="img">
+                <img src="style/logo.png" alt="">
+            </div>
+
+        </div>
+        <!-- Chating -->
+        <div class="smallBody">
+            <div class="userA">
+                <label for="">LYHEANG</label>
+                <p>Hello, how are you friends ? This is my first message.</p>
+            </div>
+            <div class="userB">
+                <label for="">LYDEN</label>
+                <p>Ohh! Hello, I'm good.Ohh! Hello, I'm goodOhh! Hello, I'm goodOhh! Hello, I'm good.</p>
+            </div>
+        </div>
+        <!-- Messaging -->
+        <div class="chat">
+            <input type="text" name="" id="" class="word" placeholder="Message">
+        </div>
+    </div>
+</body>
+
 </html>
