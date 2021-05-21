@@ -1,31 +1,44 @@
-const IP = "192.168.88.19";
-const PORT = 3000;
-const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/login";
+// Add Text
+let smallBody = document.querySelector("#smallBody");
+let message = document.querySelector("#text");
 
-function login(e) {
-  e.preventDefault();
+function addMessage() {
+    if (message.value != "") {
+        let label = document.createElement("label");
+        label.textContent = ("LYHEANG");
+        let text = document.createElement("p");
+        text.textContent = message.value;
+        let div = document.createElement("div");
+        div.className = "userA";
+        div.appendChild(label);
+        div.appendChild(text);
+        smallBody.appendChild(div);
+    }
+    message.value = "";
 
-  //Create the REQUEST
-  let querry = GET_LOGIN_REQUEST + "?name=" + userName.value + "&password=" + password.value;
-  axios.get(querry).then((response) => {
-    let isValid = response.data;
-    let text = "Wrong password or username";
-    let color = "red";
 
-    //check to change color to green and text= "Login success!" if login success.
-    // if (isValid === true){
-    //   text = "Successful Login";
-    //   color = "green";
-    // }
-    message.textContent = text;
-    message.style.color = color;
-  });
 }
+let add = document.querySelector("#btnSend");
+add.addEventListener('click', addMessage);
+message.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        addMessage();
+        message.value = "";
+    }
+});
 
-// MAIN---------------------------------------------------------------------------------------------
-const message = document.querySelector("#message");
-const userName = document.querySelector("#userName");
-const password = document.querySelector("#password");
-const btn = document.querySelector("#btn");
+// Send Emoji
+function addEmoji() {
+    let label = document.createElement("label");
+    label.textContent = ("LYHEANG");
+    let text = document.createElement("p");
+    text.textContent = ": )";
+    let div = document.createElement("div");
+    div.className = "userA";
+    div.appendChild(label);
+    div.appendChild(text);
+    smallBody.appendChild(div);
 
-btn.addEventListener("click", login);
+}
+let emoji = document.querySelector("#emojiLogo");
+emoji.addEventListener('click', addEmoji);

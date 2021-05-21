@@ -1,7 +1,6 @@
 body {
     width: 100%;
     margin: 0;
-    background: rgb(241, 241, 241);
     overflow-x: hidden;
 }
 
@@ -9,10 +8,11 @@ body {
 /* Login box */
 
 .login {
+    display: none;
     width: 100%;
     height: 100vh;
     background: rgb(241, 241, 241);
-    display: flex;
+    /* display: flex; */
 }
 
 .login>.intro {
@@ -71,10 +71,10 @@ body {
 }
 
 .login>.form>form>#btn2 {
-    width: 55%;
+    width: 50%;
     height: 7vh;
     margin-bottom: 20px;
-    font-size: 23px;
+    font-size: 20px;
     background: #ff1e00;
     color: #fff;
     border-radius: 5px;
@@ -83,22 +83,27 @@ body {
     cursor: pointer;
 }
 
+label {
+    margin: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
 
 /* Header */
 
 .header {
     width: 60%;
-    height: 10vh;
-    margin-left: 20%;
-    margin-right: 20%;
-    background: #ffffff;
+    height: 7vh;
+    margin: auto;
+    background: #5acf5f;
     display: flex;
     align-items: center;
 }
 
 .header>.img {
-    width: 10vh;
-    height: 10vh;
+    width: 7vh;
+    height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +111,7 @@ body {
 }
 
 .header>.img>img {
-    width: 55px;
+    width: 50px;
 }
 
 
@@ -114,32 +119,34 @@ body {
 
 .smallBody {
     width: 60%;
-    height: 75vh;
-    margin-left: 20%;
-    margin-right: 20%;
-    background: rgb(219, 219, 219);
+    height: 83vh;
+    background: rgb(230, 230, 230);
     padding: 20px;
     box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
 
 /* User A */
 
 .smallBody>.userA {
-    float: right;
-    width: 51%;
-    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
     box-sizing: border-box;
 }
 
 .smallBody>.userA>p {
     margin: 0;
-    width: auto;
-    height: auto;
     background: #fff;
-    padding: 7px;
+    color: #000;
+    padding: 8px;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 20px 20px 0 20px;
 }
 
@@ -147,22 +154,21 @@ body {
 /* User B */
 
 .smallBody>.userB {
-    float: left;
-    width: 51%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     /* height: auto; */
     box-sizing: border-box;
 }
 
 .smallBody>.userB>p {
     margin: 0;
-    width: auto;
-    height: auto;
-    background: #02c01d;
-    ;
+    background: #5acf5f;
     color: #fff;
-    padding: 7px;
+    padding: 8px;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 20px 20px 20px 0px;
 }
 
@@ -176,22 +182,46 @@ body {
 
 .chat {
     width: 60%;
-    height: 15vh;
-    margin-left: 20%;
-    margin-right: 20%;
-    background: rgb(219, 219, 219);
+    height: 10vh;
+    margin: auto;
+    background: rgb(230, 230, 230);
     box-sizing: border-box;
     padding: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .chat>.word {
     box-sizing: border-box;
-    width: 100%;
-    height: 10vh;
-    border: none;
+    width: 70%;
+    height: 8vh;
+    /* border: none; */
+    border: 2.4px solid rgb(230, 230, 230);
     outline: none;
     border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 20px;
+    padding: 0 70px 0 20px;
+    font-size: 22px;
+    margin: 10px;
+}
+
+.chat>#btnSend {
+    width: 40px;
+    position: absolute;
+    margin-left: 650px;
+    cursor: pointer;
+}
+
+.chat>#emojiLogo,
+#gallary,
+#micro {
+    width: 5vh;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.chat>#bold,
+#italic {
+    width: 3vh;
+    margin: 10px;
+    cursor: pointer;
 }
