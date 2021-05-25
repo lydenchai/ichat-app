@@ -8,11 +8,15 @@ body {
 /* Login box */
 
 .login {
-    display: none;
+    /* display: none; */
     width: 100%;
     height: 100vh;
     background: rgb(241, 241, 241);
-    /* display: flex; */
+    display: flex;
+}
+
+#wup {
+    display: none;
 }
 
 .login>.intro {
@@ -27,7 +31,7 @@ body {
 
 .login>.form {
     box-sizing: border-box;
-    width: 60%;
+    width: 50%;
     height: 100%;
     padding: 30px;
     display: flex;
@@ -48,9 +52,9 @@ body {
 
 .login>.form>form>input {
     width: 100%;
-    height: 8vh;
+    height: 7vh;
     margin-bottom: 20px;
-    font-size: 22px;
+    font-size: 20px;
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -61,17 +65,17 @@ body {
 .login>.form>form>#btn {
     width: 100%;
     height: 7vh;
-    font-size: 23px;
+    font-size: 20px;
     background: #02c01d;
     color: #fff;
+    text-decoration: none;
     border-radius: 5px;
     border: none;
     outline: none;
-    cursor: pointer;
 }
 
 .login>.form>form>#btn2 {
-    width: 50%;
+    width: 60%;
     height: 7vh;
     margin-bottom: 20px;
     font-size: 20px;
@@ -92,6 +96,10 @@ label {
 
 /* Header */
 
+.messaging {
+    overflow-y: hidden;
+}
+
 .header {
     width: 60%;
     height: 7vh;
@@ -102,31 +110,50 @@ label {
 }
 
 .header>.img {
-    width: 7vh;
-    height: 7vh;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 92%;
+    position: absolute;
+    left: 75%;
 }
 
 .header>.img>img {
-    width: 50px;
+    width: 70px;
+}
+
+.header>.logout {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 77%;
+}
+
+.header>.logout>img {
+    width: 40px;
 }
 
 
 /* Chating */
 
-.smallBody {
+.message_container {
     width: 60%;
     height: 83vh;
+    margin: auto;
+    overflow-y: auto;
     background: rgb(230, 230, 230);
+}
+
+.smallBody {
+    width: 100%;
+    height: 83vh;
     padding: 20px;
     box-sizing: border-box;
     margin: auto;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 
 
@@ -175,11 +202,6 @@ label {
 
 /* Messaging */
 
-
-/* .messaging {
-    display: none;
-} */
-
 .chat {
     width: 60%;
     height: 10vh;
@@ -204,24 +226,14 @@ label {
     margin: 10px;
 }
 
-.chat>#btnSend {
-    width: 40px;
+.chat>#send {
     position: absolute;
-    margin-left: 650px;
-    cursor: pointer;
+    left: 64%;
+    width: 10vh;
 }
 
-.chat>#emojiLogo,
-#gallary,
-#micro {
+.chat>img {
     width: 5vh;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.chat>#bold,
-#italic {
-    width: 3vh;
-    margin: 10px;
-    cursor: pointer;
+    margin-left: 6px;
+    margin-right: 6px;
 }

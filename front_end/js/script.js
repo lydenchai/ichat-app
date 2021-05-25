@@ -1,44 +1,30 @@
-// Add Text
-let smallBody = document.querySelector("#smallBody");
-let message = document.querySelector("#text");
+const url = "http://192.168.88.29:3000/login";
 
-function addMessage() {
-    if (message.value != "") {
-        let label = document.createElement("label");
-        label.textContent = ("LYHEANG");
-        let text = document.createElement("p");
-        text.textContent = message.value;
-        let div = document.createElement("div");
-        div.className = "userA";
-        div.appendChild(label);
-        div.appendChild(text);
-        smallBody.appendChild(div);
+function openApp(event) {
+    event.preventDefault();
+    let data_input = {
+        name: Username.value,
+        password: Password.value
     }
-    message.value = "";
-
-
+    axios.post(url, data_input).then((response) => {
+        let users = response.data;
+        if (users) {
+            localStorage.setItem("username", Username.value);
+            localStorage.setItem("password", Password.value);
+            window.location.href = "message/message.html";
+        } else {
+            let h4Hide = document.querySelector("#f");
+            let show = document.querySelector("#wup");
+            h4Hide.style.display = "none";
+            show.style.display = "block";
+            show.style.color = "red";
+            body.appendChild(show);
+        }
+    })
 }
-let add = document.querySelector("#btnSend");
-add.addEventListener('click', addMessage);
-message.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        addMessage();
-        message.value = "";
-    }
-});
+// Main
+let login = document.querySelector("#btn");
+login.addEventListener("click", openApp);
 
-// Send Emoji
-function addEmoji() {
-    let label = document.createElement("label");
-    label.textContent = ("LYHEANG");
-    let text = document.createElement("p");
-    text.textContent = ": )";
-    let div = document.createElement("div");
-    div.className = "userA";
-    div.appendChild(label);
-    div.appendChild(text);
-    smallBody.appendChild(div);
-
-}
-let emoji = document.querySelector("#emojiLogo");
-emoji.addEventListener('click', addEmoji);
+let Username = document.querySelector("#username");
+let Password = document.querySelector("#password");
