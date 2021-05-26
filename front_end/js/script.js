@@ -1,4 +1,4 @@
-const url = "http://192.168.88.29:3000/login";
+const url = "http://192.168.88.7:3000/login";
 
 function openApp(event) {
     event.preventDefault();
