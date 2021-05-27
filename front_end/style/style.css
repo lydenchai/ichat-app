@@ -65,6 +65,7 @@ body {
 .login>.form>form>#btn {
     width: 100%;
     height: 7vh;
+    cursor: pointer;
     font-size: 20px;
     background: #02c01d;
     color: #fff;

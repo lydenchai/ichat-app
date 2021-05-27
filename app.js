@@ -22,7 +22,7 @@ app.post("/post", (req, res) => {
     let txt_chat = req.body.text;
     let info = {
         name: userName,
-        text: txt_chat
+        text: txt_chat,
     }
     message_data.push(info);
     fs.writeFileSync("chat.json", JSON.stringify(message_data));
