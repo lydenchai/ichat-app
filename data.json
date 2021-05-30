@@ -1,14 +1,12 @@
-[{
+[   
+    {
         "name": "LYHEANG",
-        "password": "1111"
+        "password": "1111",
+        "time": "00:00"
     },
     {
         "name": "LYDEN",
-        "password": "2222"
-    }, 
-    {   
-        "name": "VUN",
-        "password": "3333"
+        "password": "2222",
+        "time": "00:00"
     }
-    
 ]

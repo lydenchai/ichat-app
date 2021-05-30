@@ -1,10 +1,12 @@
-const url = "http://192.168.88.17:3000";
+const url = "http://192.168.88.14:3000";
 
+let scrollAuto = true;
 function show_message(message_data) {
     message_container.firstElementChild.remove();
     let smallBody = document.createElement("div");
     smallBody.className = "smallBody";
     for (let data of message_data) {
+        // CREATE ELEMENTS----------
         let userA = document.createElement("div");
         userA.className = "userA";
         userA.id = "userA";
@@ -13,51 +15,82 @@ function show_message(message_data) {
         let label = document.createElement("label");
         let p = document.createElement("p");
         if (data.name === username_login) {
-            label.textContent = username_login;
+            label.textContent = username_login + " " + data.time;
             p.textContent = data.text;
             userA.appendChild(label);
             userA.appendChild(p);
             smallBody.appendChild(userA);
+            if (data.bold === true){
+                p.style.fontWeight = "bold";
+            }else{
+                p.style.fontWeight = "normal";
+            }
+            if (data.italic === true){
+                p.style.fontStyle = "italic";
+            }else{
+                p.style.fontStyle = "normal";
+            }
         } else {
-            label.textContent = data.name;
+            label.textContent = data.name + " " + data.time;
             p.textContent = data.text;
             userB.appendChild(label);
             userB.appendChild(p);
             smallBody.appendChild(userB);
-        }
-
-        // text bold
-
-        // if (data.textBold === true){
-        //     p.style.fontWeight = "bold";
-        // }else{
-        //     p.style.fontWeight = "normal";
-        // }
-        // if (data.textItalic === true){
-        //     p.style.fontStyle = "italic";
-        // }else{
-        //     p.style.fontStyle = "normal";
-        // }
+            if (data.bold === true){
+                p.style.fontWeight = "bold";
+            }else{
+                p.style.fontWeight = "normal";
+            }
+            if (data.italic === true){
+                p.style.fontStyle = "italic";
+            }else{
+                p.style.fontStyle = "normal";
+            }
+        }               
     }
     message_container.appendChild(smallBody);
 };
 
+// LOAD MESSAGES----------
 function loard_message() {
     axios.get("/getmessage").then((response) => {
         show_message(response.data);
     });
+    if (scrollAuto) {
+        message_container.scrollTop = message_container.scrollHeight - message_container.clientHeight;
+    }
 };
 
+// SEND MESSAGE----------
 function send_message() {
-    let message_info = {
-        username: username_login,
-        text: message_text.value,
+     if (message_text.value !== "") {
+        scrollAuto = true;
+        let message_info = {
+            username: username_login,
+            text: message_text.value,
+            bold: fontBold,
+            italic: textItalic
+        };
+        axios.post(url + "/post", message_info).then((response) => {
+            console.log(response.data);
+        });
+        message_text.value ="";
     };
-    axios.post(url + "/post", message_info);
 };
 
-// TEXT BOLD-----------
+// EMOJI----------
+let emoji = document.querySelector("#emoji");
+let picker = new EmojiButton();
+document.addEventListener('DOMContentLoaded', () => {
+    picker.on('emoji', emoji => {
+        message_text.value += emoji;
+    });
+    emoji.addEventListener('click', () => {
+        picker.togglePicker(emoji);
+    });
+});
 
+// TEXT BOLD----------
 let fontBold = false;
 let count = 0;
 function textBold(){
@@ -70,9 +103,10 @@ function textBold(){
         message_text.style.fontWeight = "normal";
     }
 }
+let btnBold = document.querySelector("#btnBold");
+btnBold.addEventListener("click", textBold);
 
-//  TEXT ITALIC----------
-
+// TEXT ITALIC----------
 let textItalic = false;
 let check = 0;
 function fontItalic(){
@@ -85,35 +119,34 @@ function fontItalic(){
         message_text.style.fontStyle = "normal";
     }
 }
+let btnItalic = document.querySelector("#btnItalic");
+btnItalic.addEventListener("click", fontItalic);
 
-//Main information 
+// MAIN INFORMATION---------- 
 let message_container = document.querySelector(".message_container")
 let username_login = localStorage.getItem("username");
 let password = localStorage.getItem("password");
 let message_text = document.querySelector(".word");
 let btn_send = document.getElementById("send");
-
 btn_send.addEventListener("click", send_message);
-let btnBold = document.querySelector("#btnBold");
-btnBold.addEventListener("click", textBold);
-let btnItalic = document.querySelector("#btnItalic");
-btnItalic.addEventListener("click", fontItalic);
 
-// Refresh
+// KEY ENTER----------
+message_text.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13){
+        send_message();
+    }
+});
+
+// REFRESH----------
 setInterval(loard_message, 100);
 
-// BOLD
-
-
-
-
-
-
-
-// Log out
+// LOG OUT----------
 function signout() {
     window.location.href = "../index.html";
 }
 let logOut = document.querySelector("#logOut");
 logOut.addEventListener("click", signout);
 
+message_container.addEventListener("scroll", () => {
+    scrollAuto = false;
+})

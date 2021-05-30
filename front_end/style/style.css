@@ -2,6 +2,7 @@ body {
     width: 100%;
     margin: 0;
     overflow-x: hidden;
+    font-family: Arial;
 }
 
 
@@ -116,7 +117,7 @@ label {
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 75%;
+    left: 48%;
 }
 
 .header>.img>img {
@@ -129,13 +130,13 @@ label {
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 77%;
+    left: 76.5%;
+    cursor: pointer;
 }
 
 .header>.logout>img {
     width: 40px;
 }
-
 
 /* Chating */
 
@@ -144,7 +145,7 @@ label {
     height: 83vh;
     margin: auto;
     overflow-y: auto;
-    background: rgb(230, 230, 230);
+    background: rgb(230, 230, 230); 
 }
 
 .smallBody {
@@ -229,7 +230,7 @@ label {
 
 .chat>#send {
     position: absolute;
-    left: 64%;
+    left: 69%;
     width: 10vh;
 }
 
@@ -238,3 +239,11 @@ label {
     margin-left: 6px;
     margin-right: 6px;
 }
+
+.chat>#btnBold, #btnItalic{
+    width: 4vh;
+}
+
+.chat>#btnBold, #btnItalic, #send, #pic, #voice, #emoji{
+    cursor: pointer;
+} 

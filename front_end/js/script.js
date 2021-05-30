@@ -1,5 +1,6 @@
-const url = "http://192.168.88.17:3000/login";
+const url = "http://192.168.88.14:3000/login";
 
+// LOGIN TO CHAT APP----------
 function openApp(event) {
     event.preventDefault();
     let data_input = {
@@ -19,10 +20,11 @@ function openApp(event) {
             show.style.display = "block";
             show.style.color = "red";
             body.appendChild(show);
-        }
+        }   
     })
 }
-// Main
+
+// MAIN----------
 let login = document.querySelector("#btn");
 login.addEventListener("click", openApp);
 
