@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Message</title>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+        rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../style/style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="message.js" defer></script>
+    </head>
 
-<head>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="message.js" defer></script>
-
-</head>
-
-<body>
-    <div class="messaging" id="messaging">
-        <!-- Header -->
-        <div class="header">
-            <div class="img">
-                <img src="../img/logo TEXT.png" alt="">
+    <body>
+        <div class="messaging" id="messaging">
+            <!-- Header -->
+            <div class="header">
+                <div class="img">
+                <img src="../img/logo TEXT.png" alt="" />
+                </div>
+                <div class="logout">
+                <img src="../img/logout.png" alt="" id="logOut" />
+                </div>
             </div>
-            <div class="logout">
-                <img src="../img/logout.png" alt="" id="logOut">
+            <!-- Chating -->
+            <div class="message_container">
+                <div class="smallBody" id="smallBody"></div>
+            </div>
+            <!-- Messaging -->
+            <div class="chat">
+                <img src="../img/gallary.png" alt="" id="pic" />
+                <img src="../img/micro.png" alt="" id="voice" />
+                <img src="../img/bold.png" alt="" id="btnBold" class="bold" />
+                <img src="../img/italic.png" alt="" id="btnItalic" />
+                <input
+                type="text "
+                id="text "
+                class="word"
+                placeholder="Type a message "
+                />
+                <img src="../img/send.png" alt="" id="send" />
+                <img src="../img/emojo.png" alt="" id="emoji" />
             </div>
         </div>
-        <!-- Chating -->
-        <div class="message_container">
-            <div class="smallBody" id="smallBody">
-                
-            </div>
-        </div>
-        <!-- Messaging -->
-        <div class="chat ">
-            <img src="../img/gallary.png" alt="" id="pic">
-            <img src="../img/micro.png" alt="" id="voice">
-            <img src="../img/bold.png" alt="" id="btnBold" class="bold">
-            <img src="../img/italic.png" alt="" id="btnItalic">
-            <input type="text " id="text " class="word " placeholder="Type a message ">
-            <img src="../img/send.png" alt="" id="send">
-            <img src="../img/emojo.png" alt="" id="emoji">
-        </div>
-    </div>
-</body>
-
+    </body>
 </html>

@@ -1,4 +1,4 @@
-const url = "http://192.168.88.14:3000/login";
+const url = "http://192.168.70.69:3000/login";
 
 // LOGIN TO CHAT APP----------
 function openApp(event) {
@@ -6,7 +6,7 @@ function openApp(event) {
     let data_input = {
         name: Username.value,
         password: Password.value
-    }
+    };
     axios.post(url, data_input).then((response) => {
         let users = response.data;
         if (users) {
@@ -20,9 +20,9 @@ function openApp(event) {
             show.style.display = "block";
             show.style.color = "red";
             body.appendChild(show);
-        }   
-    })
-}
+        }
+    });
+};
 
 // MAIN----------
 let login = document.querySelector("#btn");

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>iChat</title>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+        rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style/style.css" />
+        <script src="js/script.js " defer></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
 
-<head>
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iChat</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
-    <script src="js/script.js " defer></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
-
-<body>
-    <!-- login page -->
-    <div class="login" id="login">
+    <body>
+        <!-- login page -->
+        <div class="login" id="login">
         <div class="intro">
-            <img src="img/login_logo.png" alt="">
+            <img src="img/login_logo.png" alt="" />
         </div>
         <div class="form">
             <form action="">
-                <input type="text" placeholder="Username" id="username">
-                <input type="password" placeholder="Password" id="password">
+                <input type="text" placeholder="Username" id="username" />
+                <input type="password" placeholder="Password" id="password" />
                 <button id="btn">Log In</button>
-                <h4 style="color:black;" id="f">Forgot account?</h4>
+                <h4 style="color: black" id="f">Forgot account?</h4>
                 <p id="wup">Wrong username or password!</p>
-                <hr><br>
+                <hr />
+                <br />
                 <button id="btn2">Creat New Account</button>
             </form>
         </div>
-    </div>
-</body>
-
+        </div>
+    </body>
 </html>

@@ -1,4 +1,4 @@
-const url = "http://192.168.88.14:3000";
+const url = "http://192.168.70.69:3000";
 
 let scrollAuto = true;
 function show_message(message_data) {
@@ -6,6 +6,7 @@ function show_message(message_data) {
     let smallBody = document.createElement("div");
     smallBody.className = "smallBody";
     for (let data of message_data) {
+
         // CREATE ELEMENTS----------
         let userA = document.createElement("div");
         userA.className = "userA";
@@ -20,34 +21,34 @@ function show_message(message_data) {
             userA.appendChild(label);
             userA.appendChild(p);
             smallBody.appendChild(userA);
-            if (data.bold === true){
+            if (data.bold === true) {
                 p.style.fontWeight = "bold";
-            }else{
+            } else {
                 p.style.fontWeight = "normal";
-            }
-            if (data.italic === true){
+            };
+            if (data.italic === true) {
                 p.style.fontStyle = "italic";
-            }else{
+            } else {
                 p.style.fontStyle = "normal";
-            }
+            };
         } else {
             label.textContent = data.name + " " + data.time;
             p.textContent = data.text;
             userB.appendChild(label);
             userB.appendChild(p);
             smallBody.appendChild(userB);
-            if (data.bold === true){
+            if (data.bold === true) {
                 p.style.fontWeight = "bold";
-            }else{
+            } else {
                 p.style.fontWeight = "normal";
             }
-            if (data.italic === true){
+            if (data.italic === true) {
                 p.style.fontStyle = "italic";
-            }else{
+            } else {
                 p.style.fontStyle = "normal";
-            }
-        }               
-    }
+            };
+        };
+    };
     message_container.appendChild(smallBody);
 };
 
@@ -58,12 +59,12 @@ function loard_message() {
     });
     if (scrollAuto) {
         message_container.scrollTop = message_container.scrollHeight - message_container.clientHeight;
-    }
+    };
 };
 
 // SEND MESSAGE----------
 function send_message() {
-     if (message_text.value !== "") {
+    if (message_text.value !== "") {
         scrollAuto = true;
         let message_info = {
             username: username_login,
@@ -74,7 +75,7 @@ function send_message() {
         axios.post(url + "/post", message_info).then((response) => {
             console.log(response.data);
         });
-        message_text.value ="";
+        message_text.value = "";
     };
 };
 
@@ -93,32 +94,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // TEXT BOLD----------
 let fontBold = false;
 let count = 0;
-function textBold(){
+function textBold() {
     count++;
-    if (count %2 !== 0){
+    if (count % 2 !== 0) {
         fontBold = true;
         message_text.style.fontWeight = "bold";
-    }else{
+    } else {
         fontBold = false;
         message_text.style.fontWeight = "normal";
-    }
-}
+    };
+};
 let btnBold = document.querySelector("#btnBold");
 btnBold.addEventListener("click", textBold);
 
 // TEXT ITALIC----------
 let textItalic = false;
 let check = 0;
-function fontItalic(){
+function fontItalic() {
     check++;
-    if (check %2 !== 0){
+    if (check % 2 !== 0) {
         textItalic = true;
         message_text.style.fontStyle = "italic";
-    }else{
+    } else {
         textItalic = false;
         message_text.style.fontStyle = "normal";
-    }
-}
+    };
+};
 let btnItalic = document.querySelector("#btnItalic");
 btnItalic.addEventListener("click", fontItalic);
 
@@ -132,9 +133,9 @@ btn_send.addEventListener("click", send_message);
 
 // KEY ENTER----------
 message_text.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13){
+    if (event.keyCode === 13) {
         send_message();
-    }
+    };
 });
 
 // REFRESH----------
@@ -143,10 +144,12 @@ setInterval(loard_message, 100);
 // LOG OUT----------
 function signout() {
     window.location.href = "../index.html";
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
 }
 let logOut = document.querySelector("#logOut");
 logOut.addEventListener("click", signout);
 
 message_container.addEventListener("scroll", () => {
     scrollAuto = false;
-})
+});
