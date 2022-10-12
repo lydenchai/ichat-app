@@ -1,4 +1,4 @@
-const url = "http://192.168.70.69:3000/login";
+const url = "http://172.17.0.162:3001/login";
 
 // LOGIN TO CHAT APP----------
 function openApp(event) {

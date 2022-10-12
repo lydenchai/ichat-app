@@ -5,7 +5,7 @@ let data_user = JSON.parse(fs.readFileSync("data.json"));
 // CREATE A SERVER----------
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 app.listen(PORT, () => console.log("server is running.."));
 app.use(express.json());
 

@@ -1,101 +1,68 @@
-body {
-  width: 100%;
+* {
   margin: 0;
+  padding: 0;
+  font-family: sans-serif;
   overflow-x: hidden;
-  font-family: Arial;
 }
 
-/* Login box */
-
-.login {
-  /* display: none; */
-  width: 100%;
-  height: 100vh;
-  background: rgb(241, 241, 241);
+.login-container {
   display: flex;
+  width: 100%;
+}
+
+
+.left,
+.right {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  box-sizing: border-box;
+  height: auto;
+  width: 25vw;
+  background: #fff;
+  padding: 60px 30px 30px 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding-left: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background: rgb(230, 230, 230);
 }
 
 #wup {
   display: none;
 }
 
-.login > .intro {
-  box-sizing: border-box;
-  width: 40%;
-  height: 100%;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login > .form {
-  box-sizing: border-box;
-  width: 50%;
-  height: 90%;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login > .form > form {
-  width: 50%;
-  height: 45vh;
-  background: #fff;
-  flex-wrap: wrap;
-  padding: 25px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
-}
-
-.login > .form > form > input {
-  width: 100%;
-  height: 7vh;
-  margin-bottom: 20px;
-  font-size: 20px;
-  padding: 0px 10px 0px 10px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  outline: none;
-}
-
-.login > .form > form > #btn {
-  width: 100%;
-  height: 7vh;
-  cursor: pointer;
-  font-size: 20px;
-  background: #02c01d;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
+#btn,
+#btn2 {
   border: none;
   outline: none;
-}
-
-.login > .form > form > #btn2 {
-  width: 60%;
-  height: 7vh;
-  margin-bottom: 20px;
-  font-size: 20px;
-  background: #ff1e00;
-  color: #fff;
+  width: 100%;
+  height: 45px;
+  font-weight: 600;
+  font-size: 16px;
   border-radius: 5px;
-  border: none;
-  outline: none;
+  color: #fff;
   cursor: pointer;
-}
-
-label {
-  margin: 5px;
-  font-size: 12px;
-  font-family: sans-serif;
+  margin: 20px 0px 20px 0px;
 }
 
 /* Header */
-
 .messaging {
   overflow-y: hidden;
 }
@@ -109,7 +76,7 @@ label {
   align-items: center;
 }
 
-.header > .img {
+.header>.img {
   width: auto;
   display: flex;
   justify-content: center;
@@ -118,11 +85,11 @@ label {
   left: 48%;
 }
 
-.header > .img > img {
+.header>.img>img {
   width: 70px;
 }
 
-.header > .logout {
+.header>.logout {
   width: auto;
   display: flex;
   justify-content: center;
@@ -132,7 +99,7 @@ label {
   cursor: pointer;
 }
 
-.header > .logout > img {
+.header>.logout>img {
   width: 40px;
 }
 
@@ -158,7 +125,7 @@ label {
 
 /* User A */
 
-.smallBody > .userA {
+.smallBody>.userA {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -166,7 +133,7 @@ label {
   box-sizing: border-box;
 }
 
-.smallBody > .userA > p {
+.smallBody>.userA>p {
   margin: 0;
   background: #fff;
   color: #000;
@@ -178,7 +145,7 @@ label {
 
 /* User B */
 
-.smallBody > .userB {
+.smallBody>.userB {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -187,7 +154,7 @@ label {
   box-sizing: border-box;
 }
 
-.smallBody > .userB > p {
+.smallBody>.userB>p {
   margin: 0;
   background: #5acf5f;
   color: #fff;
@@ -210,7 +177,7 @@ label {
   align-items: center;
 }
 
-.chat > .word {
+.chat>.word {
   box-sizing: border-box;
   width: 70%;
   height: 8vh;
@@ -223,28 +190,41 @@ label {
   margin: 10px;
 }
 
-.chat > #send {
+.chat>#send {
   position: absolute;
   left: 69%;
   width: 10vh;
 }
 
-.chat > img {
+.chat>img {
   width: 5vh;
   margin-left: 6px;
   margin-right: 6px;
 }
 
-.chat > #btnBold,
+.chat>#btnBold,
 #btnItalic {
   width: 4vh;
 }
 
-.chat > #btnBold,
+.chat>#btnBold,
 #btnItalic,
 #send,
 #pic,
 #voice,
 #emoji {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d0dff1;
 }
